@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1,2">
+
+        <LinearLayout android:background="#015488"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Nova viagem"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <TextView android:text="Destino: "/>
+        <EditText android:id="@+id/destino" android:inputType="text"></EditText>
+        <TextView android:text="Tipo de Viagem:"/>
+        <RadioGroup android:id="@+id/tipoViagem"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/lazer"
+                android:checked="true"
+                android:text="Lazer"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/negocios"
+                android:layout_marginLeft="250dp"
+                android:text="Negócios"/>
+        </RadioGroup>
+        <TableRow >
+            <TextView android:layout_gravity="center"
+                android:text="Data de chegada:"/>
+            <TextView android:layout_gravity="center"
+                android:text="Dta de saída:"/>
+        </TableRow>
+        <TableRow>
+            <Button android:id="@+id/dataChegada"
+                android:onClick="selecionarData"
+                android:text="Selecione"/>
+            <Button android:id="@+id/dataSaida"
+                android:onClick="selecionarData"
+                android:text="Selecione"/>
+        </TableRow>
+        <TextView android:text="Orçamento:"/>
+        <EditText android:id="@+id/orcamento"
+            android:inputType="numberDecimal"/>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Quantidade de pessoas:"/>
+            <EditText android:id="@+id/quantidadePessoas"
+                android:inputType="number"/>
+        </TableRow>
+        <Button android:onClick="salvarViagem"
+            android:text="Salvar"/>
+    </TableLayout>
+</ScrollView>
