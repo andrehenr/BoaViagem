@@ -2,9 +2,11 @@ package br.com.casadocodigo.boaviagem;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,8 +16,10 @@ import android.widget.Toast;
 
 public class BoaviagemActivity extends Activity {
 
+    private static final String MANTER_CONECTADO = "manter_conectado";
     private EditText usuario;
     private EditText senha;
+    private CheckBox manterConectado;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -23,6 +27,14 @@ public class BoaviagemActivity extends Activity {
         setContentView(R.layout.login);
         usuario = (EditText) findViewById(R.id.usuario);
         senha = (EditText) findViewById(R.id.senha);
+        manterConectado = (CheckBox) findViewById(R.id.manterConectado);
+
+        SharedPreferences preferenciais = getPreferences(MODE_PRIVATE);
+        boolean conectado =
+                preferenciais.getBoolean(MANTER_CONECTADO, false);
+        if(conectado){
+            startActivity(new Intent(this, DashBoardActivity.class));
+        }
     }
     public void entrarOnClick(View v){
 
@@ -31,6 +43,11 @@ public class BoaviagemActivity extends Activity {
 
         if("leitor".equals(usuarioInformado) &&
                 "123".equals(senhaInformada)){
+                SharedPreferences preferencias = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferencias.edit();
+                editor.putBoolean(MANTER_CONECTADO,
+                        manterConectado.isChecked());
+                editor.commit();
                 startActivity(new Intent(this, DashBoardActivity.class));
         }
         else{

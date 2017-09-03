@@ -25,12 +25,14 @@
         <TextView android:text="Tipo de Viagem:"/>
         <RadioGroup android:id="@+id/tipoViagem"
             android:orientation="horizontal">
+
             <RadioButton android:id="@+id/lazer"
                 android:checked="true"
                 android:text="Lazer"
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +44,7 @@
             <TextView android:layout_gravity="center"
                 android:text="Data de chegada:"/>
             <TextView android:layout_gravity="center"
-                android:text="Dta de saída:"/>
+                android:text="Data de saída:"/>
         </TableRow>
         <TableRow>
             <Button android:id="@+id/dataChegada"

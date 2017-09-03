@@ -10,17 +10,15 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity android:name=".BoaviagemActivity">
-
-        </activity>
-        <activity android:name=".DashBoardActivity" />
-        <activity android:name=".GastoActivity"/>
-        <activity android:name=".ViagemActivity"/>
-        <activity android:name=".ViagemListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DashBoardActivity" />
+        <activity android:name=".GastoActivity"/>
+        <activity android:name=".ViagemActivity"/>
+        <activity android:name=".ViagemListActivity"/>
         <activity android:name=".GastoListActivity"/>
     </application>
 
