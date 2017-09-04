@@ -44,6 +44,8 @@
     <string name="informe_valor_limite">Informe o valor limite (em %)</string>
     <string name="erro_selecionar_viagem">Erro ao selecionar viagem</string>
     <string name="manter_conectado">Manter conectado</string>
+    <string name="registro_salvo">Registro salvo com sucesso</string>
+    <string name="erro_salvar">Erro ao salvar o registro</string>
 
     <string-array name="categoria_gasto">
         <item>Alimentação</item>
