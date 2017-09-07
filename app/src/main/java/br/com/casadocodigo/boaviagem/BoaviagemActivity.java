@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public class BoaviagemActivity extends Activity {
     private EditText usuario;
     private EditText senha;
     private CheckBox manterConectado;
+    private Button btnEntrar;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -35,6 +37,8 @@ public class BoaviagemActivity extends Activity {
         if(conectado){
             startActivity(new Intent(this, DashBoardActivity.class));
         }
+        btnEntrar = (Button) findViewById(R.id.btnEntrar);
+        btnEntrar.setVisibility(View.INVISIBLE);
     }
     public void entrarOnClick(View v){
 
